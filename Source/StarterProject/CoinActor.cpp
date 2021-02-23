@@ -25,3 +25,8 @@ void ACoinActor::Tick(float DeltaTime)
 
 }
 
+int ACoinActor::GetPoints()
+{
+	return points;
+}
+

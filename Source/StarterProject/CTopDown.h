@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Character.h"
+#include "StarterProjectGameModeBase.h"
 #include "CTopDown.generated.h"
 
 UCLASS()
@@ -17,6 +18,8 @@ class STARTERPROJECT_API ACTopDown : public ACharacter
 
 	void HorizontalAxis(float value);
 	void VerticalAxis(float value);
+
+	//AStarterProjectGameModeBase* gameMode{};
 
 	UFUNCTION()
 	void OnOverlap(AActor* self, AActor* other);

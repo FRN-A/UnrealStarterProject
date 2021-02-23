@@ -16,7 +16,7 @@ class STARTERPROJECT_API ACoinActor : public AActor
 public:	
 	// Sets default values for this actor's properties
 	ACoinActor();
-
+	int GetPoints();
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;

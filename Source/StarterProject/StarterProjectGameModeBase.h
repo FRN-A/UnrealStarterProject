@@ -14,4 +14,6 @@ class STARTERPROJECT_API AStarterProjectGameModeBase : public AGameModeBase
 {
 	GENERATED_BODY()
 	
+public:
+	int score{};
 };

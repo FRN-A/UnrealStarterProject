@@ -2,13 +2,17 @@
 
 
 #include "CTopDown.h"
+#include "StarterProjectGameModeBase.h"
+#include "Engine/World.h"
+#include "CoinActor.h"
+
 
 // Sets default values
 ACTopDown::ACTopDown()
 {
  	// Set this character to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
-
+	//gameMode = GetWorld()->GetAuthGameMode<AStarterProjectGameModeBase>();
 }
 
 // Called when the game starts or when spawned
@@ -56,6 +60,10 @@ void ACTopDown::OnOverlap(AActor* self, AActor* other)
 {
 	if (other->ActorHasTag("Coin"))
 	{
+		AStarterProjectGameModeBase* gameMode = GetWorld()->GetAuthGameMode<AStarterProjectGameModeBase>();
+		ACoinActor* coin{ Cast<ACoinActor>(other) };
+		
+		gameMode->score += coin->GetPoints();
 		other->Destroy();
 	}
 }
